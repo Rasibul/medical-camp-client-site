@@ -13,7 +13,7 @@ const Login = () => {
     return (
         <div className="hero  ">
             <Helmet>
-                <title>Camp | Login</title>
+                <title> Medical Camp | Login</title>
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="">
