@@ -3,7 +3,7 @@ import useAuth from "../../../../Hook/useAuth";
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
-    console.log(user)
+    // console.log(user)
     const navOptions = <>
         <li><Link to=''>Home</Link></li>
         <li><Link to='availableCamps'>Available Camps</Link></li>
@@ -11,7 +11,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-opacity-30 bg-black">
+        <div className="navbar fixed z-10 max-w-screen-xl bg-opacity-30 bg-black">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -21,7 +21,7 @@ const Navbar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className="flex items-center ">
+                <div className="flex items-center  ">
                     <img className="w-12 sm:w-10 rounded-full" src="https://i.ibb.co/nj4JXDP/logo.png" alt="" />
                     <h2 className="font-bold italic text-center">Medico</h2>
                 </div>
