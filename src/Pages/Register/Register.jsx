@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from "../../Component/SocialLogin/SocialLogin";
 
 
 const Register = () => {
@@ -11,11 +12,11 @@ const Register = () => {
     return (
         <div className="hero  ">
             <Helmet>
-                <title>Medical Camp | Register</title>
+                <title>Camp | Register</title>
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="">
-                    <img src="https://i.ibb.co/2ccw40X/authentication.gif" alt="" />
+                    <img  src="https://i.ibb.co/2ccw40X/authentication.gif" alt="" />
                 </div>
                 <div className="card w-full max-w-sm ">
                     <h2 className='text-4xl text-center font-bold'>Please Sign Up </h2>
@@ -48,12 +49,12 @@ const Register = () => {
                             {errors.password?.type === 'pattern' && <p className='text-red-500'>password must have one number,one uppercase,onelowercase, special character and than 6 characters</p>}
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Register" />
+                            <input className="btn btn-warning" type="submit" value="Register" />
                         </div>
                         <h2 className="text-sm font-bold">
                             Alredy Have An Account? <Link to="/login" className="label-text-alt link link-hover text-sm font-bold">Please Login</Link>
                         </h2>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                     </form>
                 </div>
 

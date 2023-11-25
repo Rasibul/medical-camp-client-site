@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from "../../Component/SocialLogin/SocialLogin";
 
 const Login = () => {
     const handelLogin = e => {
@@ -12,7 +13,7 @@ const Login = () => {
     return (
         <div className="hero  ">
             <Helmet>
-                <title>Medical Camp | Login</title>
+                <title>Camp | Login</title>
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="">
@@ -34,12 +35,12 @@ const Login = () => {
                             <input type="password" placeholder="password" name="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            <input className="btn btn-warning" type="submit" value="Login" />
                         </div>
                         <label className="label font-bold">
                             New here? <Link to="/register" className="label-text-alt link link-hover font-bold">Create an account</Link>
                         </label>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                     </form>
                 </div>
 
