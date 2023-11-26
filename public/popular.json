@@ -1,0 +1,107 @@
+[
+    {
+      
+      "campName": "Heart Health Awareness Camp",
+      "image": "https://i.ibb.co/ZcqYRYx/heart.jpg",
+      "campFees": "20",
+      "scheduledDateTime": "2023-11-15 T10:00:00",
+      "venueLocation": "City Hospital Auditorium",
+      "specializedServices": ["Cardiac Screening", "Nutritional Consultation"],
+      "healthcareProfessionals": ["Dr. Smith Johnson (Cardiologist)", "Nutritionist Sarah Davis"],
+      "targetAudience": "Adults aged 30 and above",
+      "description": "Join us for the Heart Health Awareness Camp, where we focus on preventive measures and early detection of cardiovascular issues. Receive personalized advice from leading cardiologists and nutritionists to maintain a healthy heart."
+    },
+    {
+      
+      "campName": "Diabetes Wellness Camp",
+      "image": "https://i.ibb.co/YQDhPKq/dibates.jpg",
+      "campFees": "15",
+      "scheduledDateTime": "2023-11-30 T09:30:00",
+      "venueLocation": "Community Center Hall",
+      "specializedServices": ["Blood Glucose Testing", "Diabetes Education"],
+      "healthcareProfessionals": ["Dr. Emily Martinez (Endocrinologist)", "Certified Diabetes Educator Lisa Rodriguez"],
+      "targetAudience": "Individuals with diabetes and their families",
+      "description": "The Diabetes Wellness Camp is dedicated to empowering individuals with diabetes through education and support. Learn about effective management strategies, get your blood glucose tested, and connect with healthcare professionals specializing in diabetes care."
+    },
+    {
+      
+      "campName": "Vision Care and Eye Checkup",
+      "image": "https://i.ibb.co/F6ZTx1N/vission-eye.jpg",
+      "campFees": "12",
+      "scheduledDateTime": "2023-12-05 T11:00:00",
+      "venueLocation": "Opticare Vision Center",
+      "specializedServices": ["Comprehensive Eye Examination", "Prescription Glasses Distribution"],
+      "healthcareProfessionals": ["Dr. Alan Thompson (Ophthalmologist)", "Optometrist Rachel White"],
+      "targetAudience": "All age groups",
+      "description": "Join us at the Vision Care and Eye Checkup camp for a comprehensive eye examination. Receive free prescription glasses and valuable eye care tips from our experienced ophthalmologists and optometrists. Your vision matters, and we are here to help you maintain it."
+    },
+    {
+     
+      "campName": "Women's Health and Wellness Expo",
+      "image": "https://i.ibb.co/NmScJZD/womens-helath.jpg",
+      "campFees": "25",
+      "scheduledDateTime": "2023-12-20 T13:30:00",
+      "venueLocation": "Women's Health Center",
+      "specializedServices": ["Gynecological Checkup", "Breast Cancer Awareness"],
+      "healthcareProfessionals": ["Dr. Samantha Brown (OB-GYN)", "Breast Health Educator Michelle Clark"],
+      "targetAudience": "Women of all ages",
+      "description": "Celebrate women's health at our Women's Health and Wellness Expo. Receive personalized gynecological checkups, participate in breast cancer awareness programs, and gain valuable insights into maintaining your overall well-being. Empower yourself with knowledge and care."
+    },
+    {
+     
+      "campName": "Child Immunization Drive",
+      "image": "https://i.ibb.co/1rtD1Bb/child-immunuzation.jpg",
+      "campFees": "15",
+      "scheduledDateTime": "2023-11-08 T14:15:00",
+      "venueLocation": "Pediatric Wellness Clinic",
+      "specializedServices": ["Routine Vaccinations", "Child Health Consultation"],
+      "healthcareProfessionals": ["Dr. Michael Lee (Pediatrician)", "Pediatric Nurse Susan Adams"],
+      "targetAudience": "Infants and children up to 5 years",
+      "description": "Ensure your child's health and safety by joining our Child Immunization Drive. Our experienced pediatricians will provide routine vaccinations, and you can consult with healthcare professionals regarding your child's overall health and development."
+    },
+    {
+      
+      "campName": "Mental Health Awareness Symposium",
+      "image": "https://i.ibb.co/fCG6h1X/mental-health.jpg",
+      "campFees": "10",
+      "scheduledDateTime": "2023-11-12 T15:45:00",
+      "venueLocation": "Community Mental Health Center",
+      "specializedServices": ["Counseling Sessions", "Stress Management Workshop"],
+      "healthcareProfessionals": ["Dr. Lisa Williams (Psychiatrist)", "Licensed Counselor James Turner"],
+      "targetAudience": "All age groups",
+      "description": "Join us for the Mental Health Awareness Symposium, where we emphasize the importance of mental well-being. Participate in counseling sessions, attend a stress management workshop, and gain valuable insights into maintaining good mental health. Your mental well-being matters to us."
+    },
+    {
+      
+      "campName": "Respiratory Health Camp",
+      "image": "https://i.ibb.co/khwNjJJ/respiratory.jpg",
+      "campFees": "18",
+      "scheduledDateTime": "2023-12-18 T11:30:00",
+      "venueLocation": "LungCare Clinic",
+      "specializedServices": ["Lung Function Tests", "Asthma Education"],
+      "healthcareProfessionals": ["Dr. Andrew Miller (Pulmonologist)", "Respiratory Therapist Emma White"],
+      "targetAudience": "Individuals with respiratory concerns",
+      "description": "Breathe easy at our Respiratory Health Camp. Receive lung function tests, asthma education, and personalized advice from our expert pulmonologists and respiratory therapists. Take proactive steps towards better respiratory health and improved quality of life."
+    },
+    {
+      
+      "campName": "Senior Wellness Expo",
+      "image": "https://i.ibb.co/jyv7fGr/Senior-Expo.jpg",
+      "campFees": "12",
+      "scheduledDateTime": "2023-12-05 T10:45:00",
+      "venueLocation": "Senior Community Center",
+      "specializedServices": ["Geriatric Health Assessment", "Fall Risk Evaluation"],
+      "healthcareProfessionals": ["Dr. Patricia Turner (Geriatrician)", "Physical Therapist Mark Johnson"],
+      "targetAudience": "Seniors aged 65 and above",
+      "description": "Celebrate your golden years at the Senior Wellness Expo. Receive geriatric health assessments, participate in fall risk evaluations, and connect with experts in senior care. Your well-being is our priority as we support you in leading an active and fulfilling life."
+    },
+    {
+      "campName": "Dental Care and Oral Hygiene Workshop",
+      "image": "https://i.ibb.co/z55WPWX/dental.jpg",
+      "campFees": "15",
+      "scheduledDateTime": "2023-11-15 T13:00:00",
+      "venueLocation": "SmileBright Dental Clinic",
+      "specializedServices": ["Dental Checkup", "Oral Health Education"],
+      "healthcareProfessionals": ["Dr. Kevin Wilson (Dentist)", "Dental Hy"]
+    }
+]
