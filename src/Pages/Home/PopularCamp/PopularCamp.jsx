@@ -5,6 +5,7 @@ import usePopularCamp from "../../../Hook/usePopularCamp";
 
 const PopularCamp = () => {
     const [popularCamp] = usePopularCamp()
+    const shortedBlog = popularCamp.slice(0,6)
     return (
         <div>
             <SectionTitle
@@ -13,7 +14,7 @@ const PopularCamp = () => {
             ></SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 max-w-[1300px] mx-auto">
                 {
-                    popularCamp.map(camp => <PopularCampCart key={camp._id} camp={camp}></PopularCampCart>)
+                    shortedBlog.map(camp => <PopularCampCart key={camp._id} camp={camp}></PopularCampCart>)
                 }
             </div>
         </div>
