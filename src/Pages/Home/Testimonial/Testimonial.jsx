@@ -1,5 +1,4 @@
 import SectionTitle from '../../../Component/SectionTitle/SectionTitle';
-import { useQuery } from '@tanstack/react-query';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { Rating } from '@smastrom/react-rating'
