@@ -23,7 +23,7 @@ const Login = () => {
                 icon: "success",
                 title: "User Login Sucessfully",
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1500
             });
 
         })

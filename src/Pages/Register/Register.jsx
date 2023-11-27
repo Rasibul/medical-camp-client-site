@@ -34,7 +34,7 @@ const Register = () => {
                                     icon: "success",
                                     title: "User Create Sucessfully",
                                     showConfirmButton: false,
-                                    timer: 1000
+                                    timer: 1500
                                 });
                                 navigate('/')
                             }

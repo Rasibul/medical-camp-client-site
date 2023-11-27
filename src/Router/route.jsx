@@ -6,13 +6,15 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import CampDetails from "../Pages/CampDetails/CampDetails";
 
 
 const route = createBrowserRouter([
     {
         path: '',
         element: <MainLayOut></MainLayOut>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '',
@@ -20,7 +22,14 @@ const route = createBrowserRouter([
             },
             {
                 path: 'availableCamps',
-                element: <AvailableCamps></AvailableCamps>
+                element: <PrivateRoute>
+                    <AvailableCamps></AvailableCamps>
+                </PrivateRoute>
+            },
+            {
+                path:'camp-details/:id',
+                element:<CampDetails></CampDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
             },
             {
                 path: 'contactUs',
