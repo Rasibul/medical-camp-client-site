@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import SocialLogin from "../../Component/SocialLogin/SocialLogin";
+import useAuth from "../../Hook/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
+    const { signIn } = useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
     const handelLogin = e => {
         e.preventDefault()
         const from = e.target
         const email = from.email.value
         const password = from.password.value
-        console.log(email, password)
+
+        signIn(email, password)
+        .then(() => {
+            // console.log(res.user)
+            navigate(location?.state ? location.state : '/');
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User Login Sucessfully",
+                showConfirmButton: false,
+                timer: 1000
+            });
+
+        })
+        // .catch(error => console.log(error))
     }
     return (
         <div className="hero  ">

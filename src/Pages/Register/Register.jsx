@@ -1,13 +1,48 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import SocialLogin from "../../Component/SocialLogin/SocialLogin";
+import useAuth from "../../Hook/useAuth";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hook/useAxiosPublic";
 
 
 const Register = () => {
+    const axiosPublic= useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors }, } = useForm()
+    const { createUser, handelProfile } = useAuth()
+    const navigate = useNavigate()
+
     const onSubmit = (data) => {
-        console.log(data)
+        // console.log(data)
+        createUser(data.email, data.password)
+        .then(() => {
+            // const logedInUser = result.user
+            // console.log(logedInUser)
+            handelProfile(data.name, data.photoURL)
+                .then(() => {
+                    const userInfo = {
+                        name: data.name,
+                        email: data.email
+                    }
+                    axiosPublic.post('/api/v1/users', userInfo)
+                        .then(res => {
+                            if (res.data.insertedId) {
+                                reset()
+                                Swal.fire({
+                                    position: "top-end",
+                                    icon: "success",
+                                    title: "User Create Sucessfully",
+                                    showConfirmButton: false,
+                                    timer: 1000
+                                });
+                                navigate('/')
+                            }
+                        })
+                })
+                .catch(error => console.log(error))
+
+        })
     }
     return (
         <div className="hero  ">
