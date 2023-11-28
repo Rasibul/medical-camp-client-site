@@ -25,10 +25,7 @@ const AvailableCamps = () => {
                             <p className="text-sm text-gray-600 mb-2">Venue: {camp.venueLocation}</p>
                             <p className="text-sm text-gray-600 mb-2">Services: {camp.specializedServices.join(', ')}</p>
                             <p className="text-sm text-gray-600 mb-4">Description: {camp.description}</p>
-                            <div className="flex justify-between items-center">
-                                <Link to='/join'>
-                                    <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Join</button>
-                                </Link>
+                            <div className="flex justify-center items-center">
                                 <Link to={`/camp-details/${camp._id}`}>
                                     <button className="text-blue-500 hover:underline">Details</button>
                                 </Link>

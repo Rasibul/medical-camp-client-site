@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 
@@ -13,7 +13,7 @@ const CampDetails = () => {
     // console.log(campDetails)
 
     const onSubmit = async (data) => {
-        console.log(data)
+        // console.log(data)
         const useInfo = {
             name: data.name,
             age: data.age,
@@ -24,8 +24,8 @@ const CampDetails = () => {
             number: data.number,
             adress: data.adress,
             campName: data.campName,
-            scheduledDateTime:data.scheduledDateTime,
-            venue:data.venue
+            scheduledDateTime: data.scheduledDateTime,
+            venue: data.venue
 
         }
         const userReg = await axiosSecure.post('/api/v1/register', useInfo)

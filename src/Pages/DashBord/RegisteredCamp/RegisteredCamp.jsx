@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 
 
@@ -25,7 +25,7 @@ const RegisteredCamp = () => {
         const campFee = parseInt(item.campFee);
         return isNaN(campFee) ? total : total + campFee;
     }, 0);
-    const handeDelete = id =>{
+    const handeDelete = id => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -84,14 +84,14 @@ const RegisteredCamp = () => {
                                     <td className="">
                                         UnPaid
                                         <Link to="/dashboard/payment">
-                                        <button className="btn btn-xs bg-red-400">Pay</button>
+                                            <button className="btn btn-xs bg-red-400">Pay</button>
                                         </Link>
                                     </td>
                                 </div>
                                 <td className="p-2">ok</td>
                                 <td className="p-2">
-                                    <button onClick={()=> handeDelete(item._id)} 
-                                    className="btn btn-ghost btn-xs">Cancel</button>
+                                    <button onClick={() => handeDelete(item._id)}
+                                        className="btn btn-ghost btn-xs">Cancel</button>
                                 </td>
                             </tr>
                         ))}
