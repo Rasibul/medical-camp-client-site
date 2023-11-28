@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const ContactUs = () => {
     return (
-        <div className="">
+        <div>
+            <Helmet>
+                <title>Medical Camp | Contact Page</title>
+            </Helmet>
             <div className="min-h-screen flex items-center justify-center ">
                 <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-6">Contact Us</h2>

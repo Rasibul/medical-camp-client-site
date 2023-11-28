@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "../../Component/SectionTitle/SectionTitle";
 import usePopularCamp from "../../Hook/usePopularCamp";
+import { Helmet } from "react-helmet";
 
 const AvailableCamps = () => {
     const [popularCamp] = usePopularCamp()
     return (
         <section>
+             <Helmet>
+                <title>Medical Camp | Available Camp</title>
+            </Helmet>
             <SectionTitle
                 subHeading={"All camps"}
                 heading={"Available Camps"}

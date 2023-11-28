@@ -8,6 +8,8 @@ import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CampDetails from "../Pages/CampDetails/CampDetails";
+import Dashbord from "../MainLayOut/Dashbord";
+import AdminHome from "../Pages/DashBord/AdminHome/AdminHome";
 
 
 const route = createBrowserRouter([
@@ -27,8 +29,10 @@ const route = createBrowserRouter([
                 </PrivateRoute>
             },
             {
-                path:'camp-details/:id',
-                element:<CampDetails></CampDetails>,
+                path: 'camp-details/:id',
+                element: <PrivateRoute>
+                    <CampDetails></CampDetails>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
             },
             {
@@ -45,6 +49,16 @@ const route = createBrowserRouter([
     {
         path: '/register',
         element: <Register></Register>
+    },
+    {
+        path:'dashbord',
+        element:<Dashbord></Dashbord>,
+        children:[
+            {
+                path:'adminHome',
+                element:<AdminHome></AdminHome>
+            }
+        ]
     }
 ])
 export default route;
