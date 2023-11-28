@@ -1,31 +1,48 @@
-import { FaHome, FaUtensils } from "react-icons/fa";
+import { FaCartPlus, FaCashRegister, FaGrinStars, FaHistory, FaHome, FaUtensils } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashbord = () => {
     return (
-        // <div className="flex">
-        //     <div className="w-64 min-h-screen bg-gradient-to-b from-purple-500 to-pink-500 text-white">
-
-        //     </div>
-        //     <div className="flex-1 p-4">
-        //         <Outlet></Outlet>
-        //     </div>
-        // </div>
-        <div className="flex flex-col lg:flex-row h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+        <div className="flex flex-col lg:flex-row h-screen ">
             {/* Sidebar */}
-            <div className="lg:w-1/4 bg-purple-700 p-4">
+            <div className="lg:w-1/4 bg-red-700 p-4 text-white">
                 <h1 className="text-2xl font-bold text-white mb-4">Dashboard</h1>
                 <ul className="menu">
                     <li>
-                        <NavLink to='/dashboard/adminHome'>
+                        <NavLink to='/dashboard/participant-profile'>
                             <FaHome></FaHome>
-                            Admin Home
+                            Participant Profile
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/dashboard/add-a-camp'>
-                            <FaUtensils></FaUtensils>
-                            Add Items
+                        <NavLink to='/dashboard/registered-camp'>
+                            <FaCashRegister />
+                            Register Camp
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/payment-history'>
+                            <FaHistory />
+                            Payment History
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/feedback-and-ratings'>
+                            <FaGrinStars />
+                            Feed Back
+                        </NavLink>
+                    </li>
+                    <div className="divider bg-white"></div>
+                    <li>
+                        <NavLink to='/'>
+                            <FaHome></FaHome>
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/availableCamps'>
+                            <FaCartPlus></FaCartPlus>
+                            Available Camp
                         </NavLink>
                     </li>
                 </ul>

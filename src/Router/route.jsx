@@ -9,7 +9,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CampDetails from "../Pages/CampDetails/CampDetails";
 import Dashbord from "../MainLayOut/Dashbord";
-import AdminHome from "../Pages/DashBord/AdminHome/AdminHome";
+import RegisteredCamp from "../Pages/DashBord/RegisteredCamp/RegisteredCamp";
 
 
 const route = createBrowserRouter([
@@ -55,8 +55,8 @@ const route = createBrowserRouter([
         element:<Dashbord></Dashbord>,
         children:[
             {
-                path:'adminHome',
-                element:<AdminHome></AdminHome>
+                path:'registered-camp',
+                element:<RegisteredCamp></RegisteredCamp>
             }
         ]
     }

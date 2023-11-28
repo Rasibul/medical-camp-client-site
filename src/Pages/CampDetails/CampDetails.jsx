@@ -29,7 +29,7 @@ const CampDetails = () => {
 
         }
         const userReg = await axiosSecure.post('/api/v1/register', useInfo)
-        console.log(userReg.data)
+        // console.log(userReg.data)
         if (userReg.data.insertedId) {
             // show success popup
             reset();
@@ -37,7 +37,7 @@ const CampDetails = () => {
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: `${data.name} is added to the menu.`,
+                title: `${data.name} join the ${campDetails.campName}.`,
                 showConfirmButton: false,
                 timer: 1500
             });
