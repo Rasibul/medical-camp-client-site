@@ -1,13 +1,14 @@
 
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 
 const RegisteredCamp = () => {
     const axiosSecure = useAxiosSecure()
     const [register, setRegister] = useState([]);
-    console.log(register)
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -24,19 +25,35 @@ const RegisteredCamp = () => {
         const campFee = parseInt(item.campFee);
         return isNaN(campFee) ? total : total + campFee;
     }, 0);
-    // console.log(totalCampFee)
+    const handeDelete = id =>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/api/v1/register/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div>
             <div className="flex justify-between font-bold text-lg sm:text-xl lg:text-2xl">
                 <h2>Total Camp Register: {register.length}</h2>
                 <h2>Total Fee: ${totalCampFee}</h2>
-                {register.length ? (
-                    <Link to="/dashboard/payment">
-                        <button className="btn bg-red-500 px-6 py-2">Pay</button>
-                    </Link>
-                ) : (
-                    <button disabled className="btn bg-red-500 px-6 py-2 cursor-not-allowed">Pay</button>
-                )}
             </div>
 
             <div className="overflow-x-auto mt-4 ml-4 font-bold">
@@ -58,15 +75,23 @@ const RegisteredCamp = () => {
                     <tbody>
                         {register.map((item, index) => (
                             <tr key={item._id} className={index % 2 === 0 ? 'bg-gray-100' : ''}>
-                                <td className="p-2">{index + 1}</td>
-                                <td className="p-2">{item.campName}</td>
-                                <td className="p-2">{item.scheduledDateTime}</td>
-                                <td className="p-2">{item.venue}</td>
-                                <td className="p-2">${item.campFee}</td>
-                                <td className="p-2">ok</td>
+                                <td className="">{index + 1}</td>
+                                <td className="">{item.campName}</td>
+                                <td className="">{item.scheduledDateTime}</td>
+                                <td className="">{item.venue}</td>
+                                <td className="">${item.campFee}</td>
+                                <div className="">
+                                    <td className="">
+                                        UnPaid
+                                        <Link to="/dashboard/payment">
+                                        <button className="btn btn-xs bg-red-400">Pay</button>
+                                        </Link>
+                                    </td>
+                                </div>
                                 <td className="p-2">ok</td>
                                 <td className="p-2">
-                                    <button className="btn btn-ghost btn-xs">Cancel</button>
+                                    <button onClick={()=> handeDelete(item._id)} 
+                                    className="btn btn-ghost btn-xs">Cancel</button>
                                 </td>
                             </tr>
                         ))}
