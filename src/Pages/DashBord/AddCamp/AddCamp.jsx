@@ -1,12 +1,15 @@
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hook/useAxiosPublic";
+import useAxiosSecure from "../../../Hook/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const AddCamp = () => {
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit, reset } = useForm()
     const axiosPublic = useAxiosPublic()
+    const axiosSecure = useAxiosSecure()
 
     const onSubmit = async (data) => {
         console.log(data)
@@ -17,6 +20,35 @@ const AddCamp = () => {
             }
         })
         console.log(res.data)
+
+        if (res.data.sucess) {
+            const addCamp = {
+                campName: data.campName,
+                scheduledDateTime: data.scheduledDateTime,
+                campFees: data.campFees,
+                venueLocation: data.venueLocation,
+                specializedServices: data.specializedServices,
+                healthcareProfessionals: data.healthcareProfessionals,
+                targetAudience: data.targetAudience,
+                description: data.description,
+                image: res.data.data.display_url
+
+            }
+            console.log(addCamp)
+            const campRes = await axiosSecure.post('/api/v1/all-camp', addCamp)
+            // console.log(campRes.data)
+            if (campRes.data.insertedId) {
+                // show success popup
+                reset();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${data.name} is added to the Camp.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        }
     }
     return (
         <div>
@@ -31,7 +63,7 @@ const AddCamp = () => {
                         <input
                             type="text"
                             placeholder="Camp Name"
-                            {...register('name', { required: true })}
+                            {...register('campName', { required: true })}
                             required
                             className="input w-full"
                         />
@@ -41,8 +73,8 @@ const AddCamp = () => {
                             <label className="block text-white font-bold mb-2">Schedule Date and Time*</label>
                             <input
                                 type="text"
-                                placeholder="Date and Time"
-                                {...register('dateTime', { required: true })}
+                                placeholder="scheduledDateTime"
+                                {...register('scheduledDateTime', { required: true })}
                                 className="input w-full"
                             />
                         </div>
@@ -50,8 +82,8 @@ const AddCamp = () => {
                             <label className="block text-white font-bold mb-2">Camp Fees*</label>
                             <input
                                 type="number"
-                                placeholder="Fees"
-                                {...register('price', { required: true })}
+                                placeholder="campFees"
+                                {...register('campFees', { required: true })}
                                 className="input w-full"
                             />
                         </div>
@@ -61,8 +93,8 @@ const AddCamp = () => {
                             <label className="block text-white font-bold mb-2">Venue*</label>
                             <input
                                 type="text"
-                                placeholder="Venue"
-                                {...register('venue', { required: true })}
+                                placeholder="venueLocation"
+                                {...register('venueLocation', { required: true })}
                                 className="input w-full"
                             />
                         </div>
@@ -70,8 +102,8 @@ const AddCamp = () => {
                             <label className="block text-white font-bold mb-2">Special Service Provider*</label>
                             <input
                                 type="text"
-                                placeholder="Service"
-                                {...register('serviceProvider', { required: true })}
+                                placeholder="specializedServices"
+                                {...register('specializedServices', { required: true })}
                                 className="input w-full"
                             />
                         </div>
@@ -105,7 +137,7 @@ const AddCamp = () => {
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div>
                     <button className="btn mb-2">
-                        Add Camp 
+                        Add Camp
                     </button>
                 </form>
             </div>

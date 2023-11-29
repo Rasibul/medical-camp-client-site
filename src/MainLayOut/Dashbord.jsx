@@ -8,7 +8,7 @@ const Dashbord = () => {
 
     const [isOrganizer] = useOrganizer()
     return (
-        <div className="flex flex-col lg:flex-row h-screen ">
+        <div className="flex flex-col lg:flex-row max-w-h-screen ">
             {/* Sidebar */}
             <div className="lg:w-1/4 bg-red-700 p-4 text-white">
                 <h1 className="text-2xl font-bold text-white mb-4">Dashboard</h1>
