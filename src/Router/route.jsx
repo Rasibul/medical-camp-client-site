@@ -14,6 +14,7 @@ import AllUser from "../Pages/DashBord/AllUser/AllUser";
 import OrganizerRoute from "./PrivateRoute/organizerRoute";
 import AddCamp from "../Pages/DashBord/AddCamp/AddCamp";
 import ManageCamp from "../Pages/DashBord/ManageCamp/ManageCamp";
+import ManageRegisterCamp from "../Pages/DashBord/ManageRegisterCamps/ManageRegisterCamp";
 
 
 const route = createBrowserRouter([
@@ -76,6 +77,10 @@ const route = createBrowserRouter([
             {
                 path:'manage-camps',
                 element:<ManageCamp></ManageCamp>
+            },
+            {
+                path:'manage-registered-camps',
+                element:<ManageRegisterCamp></ManageRegisterCamp>
             },
             {
                 path: 'users',
