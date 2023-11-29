@@ -23,7 +23,7 @@ const AvailableCamps = () => {
                             <p className="text-sm text-gray-600 mb-2">Camp Fee: ${camp.campFees}</p>
                             <p className="text-sm text-gray-600 mb-2">Time: {camp.scheduledDateTime}</p>
                             <p className="text-sm text-gray-600 mb-2">Venue: {camp.venueLocation}</p>
-                            <p className="text-sm text-gray-600 mb-2">Services: {camp.specializedServices.join(', ')}</p>
+                            <p className="text-sm text-gray-600 mb-2">Services: {camp.specializedServices}</p>
                             <p className="text-sm text-gray-600 mb-4">Description: {camp.description}</p>
                             <div className="flex justify-center items-center">
                                 <Link to={`/camp-details/${camp._id}`}>

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -33,7 +32,6 @@ const ManageRegisterCamp = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const res = await axiosSecure.delete(`/api/v1/register/${register._id}`);
-                // console.log(res.data);
                 if (res.data.deletedCount > 0) {
                     // refetch to update the ui
                     Swal.fire({

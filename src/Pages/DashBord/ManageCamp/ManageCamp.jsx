@@ -28,7 +28,7 @@ const ManageCamp = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: `${item.name} has been deleted`,
+                        title: `${item.campName} has been deleted`,
                         showConfirmButton: false,
                         timer: 1500
                     });

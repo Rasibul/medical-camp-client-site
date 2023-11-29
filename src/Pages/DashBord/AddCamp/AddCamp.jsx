@@ -12,16 +12,13 @@ const AddCamp = () => {
     const axiosSecure = useAxiosSecure()
 
     const onSubmit = async (data) => {
-        console.log(data)
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
             }
         })
-        console.log(res.data)
-
-        if (res.data.sucess) {
+        if (res.data.success) {
             const addCamp = {
                 campName: data.campName,
                 scheduledDateTime: data.scheduledDateTime,
@@ -32,18 +29,16 @@ const AddCamp = () => {
                 targetAudience: data.targetAudience,
                 description: data.description,
                 image: res.data.data.display_url
-
             }
             console.log(addCamp)
             const campRes = await axiosSecure.post('/api/v1/all-camp', addCamp)
-            // console.log(campRes.data)
             if (campRes.data.insertedId) {
                 // show success popup
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is added to the Camp.`,
+                    title: `${data.campName} is added to the Camp.`,
                     showConfirmButton: false,
                     timer: 1500
                 });

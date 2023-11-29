@@ -1,11 +1,12 @@
 
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 
 const CampDetails = () => {
+    
     const campDetails = useLoaderData()
     const { register, handleSubmit, reset } = useForm()
     const axiosSecure = useAxiosSecure()
@@ -56,7 +57,7 @@ const CampDetails = () => {
                     <p className="text-sm text-gray-600 mb-2">Camp Fee: ${campDetails.campFees}</p>
                     <p className="text-sm text-gray-600 mb-2">Time: {campDetails.scheduledDateTime}</p>
                     <p className="text-sm text-gray-600 mb-2">Venue: {campDetails.venueLocation}</p>
-                    <p className="text-sm text-gray-600 mb-2">Services: {campDetails.specializedServices.join(', ')}</p>
+                    <p className="text-sm text-gray-600 mb-2">Services: {campDetails.specializedServices}</p>
                     <p className="text-sm text-gray-600 mb-4">Description: {campDetails.description}</p>
                     <div className="text-center">
                         <button className="bg-blue-500  text-white px-4 py-2 rounded-md hover:bg-blue-700" onClick={() => document.getElementById('my_modal_5').showModal()}>Join Now</button>
