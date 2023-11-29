@@ -11,6 +11,8 @@ import CampDetails from "../Pages/CampDetails/CampDetails";
 import Dashbord from "../MainLayOut/Dashbord";
 import RegisteredCamp from "../Pages/DashBord/RegisteredCamp/RegisteredCamp";
 import AllUser from "../Pages/DashBord/AllUser/AllUser";
+import OrganizerRoute from "./PrivateRoute/organizerRoute";
+import AddCamp from "../Pages/DashBord/AddCamp/AddCamp";
 
 
 const route = createBrowserRouter([
@@ -51,26 +53,12 @@ const route = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
     },
-    // {
-    //     path:'dashbord',
-    //     element:<Dashbord></Dashbord>,
-    //     children:[
-    //         {
-    //             path:'registered-camp',
-    //             element:<RegisteredCamp></RegisteredCamp>
-    //         },
-
-    //         // orgineger route
-    //         {
-    //             path:'users',
-    //             element:<AllUser></AllUser>
-    //         }
-
-    //     ]
-    // }
+    // dashbord
     {
         path: 'dashboard',
-        element:<Dashbord></Dashbord>,
+        element: <OrganizerRoute>
+            <Dashbord></Dashbord>
+        </OrganizerRoute>,
         children: [
             {
                 path: 'registered-camp',
@@ -79,8 +67,16 @@ const route = createBrowserRouter([
 
             // organiger profile
             {
+                path: 'add-a-camp',
+                element: <OrganizerRoute>
+                    <AddCamp></AddCamp>
+                </OrganizerRoute>
+            },
+            {
                 path: 'users',
-                element: <AllUser></AllUser>
+                element: <OrganizerRoute>
+                    <AllUser></AllUser>
+                </OrganizerRoute>
             }
         ]
     }
