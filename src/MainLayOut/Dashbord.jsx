@@ -2,10 +2,11 @@ import { FaCartPlus, FaCashRegister, FaGrinStars, FaHistory, FaHome, FaList, FaU
 import { NavLink, Outlet } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { IoMdAdd } from "react-icons/io";
+import useOrganizer from "../Hook/useOrganizer";
 
 const Dashbord = () => {
 
-    const isOrginger = true
+    const [isOrganizer] = useOrganizer()
     return (
         <div className="flex flex-col lg:flex-row h-screen ">
             {/* Sidebar */}
@@ -13,7 +14,7 @@ const Dashbord = () => {
                 <h1 className="text-2xl font-bold text-white mb-4">Dashboard</h1>
                 <ul className="menu">
                     {
-                        isOrginger ? <>
+                        isOrganizer ? <>
                             <li>
                                 <NavLink to='/dashboard/organizer-profile'>
                                     <CgProfile></CgProfile>
