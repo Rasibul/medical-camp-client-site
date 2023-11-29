@@ -15,6 +15,7 @@ import OrganizerRoute from "./PrivateRoute/organizerRoute";
 import AddCamp from "../Pages/DashBord/AddCamp/AddCamp";
 import ManageCamp from "../Pages/DashBord/ManageCamp/ManageCamp";
 import ManageRegisterCamp from "../Pages/DashBord/ManageRegisterCamps/ManageRegisterCamp";
+import UpDateCamp from "../Pages/DashBord/UpdateCamp/UpDateCamp";
 
 
 const route = createBrowserRouter([
@@ -81,6 +82,11 @@ const route = createBrowserRouter([
             {
                 path:'manage-registered-camps',
                 element:<ManageRegisterCamp></ManageRegisterCamp>
+            },
+            {
+                path:'update-camp/:id',
+                element:<UpDateCamp></UpDateCamp>,
+                loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
             },
             {
                 path: 'users',

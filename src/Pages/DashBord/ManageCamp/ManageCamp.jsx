@@ -73,7 +73,7 @@ const ManageCamp = () => {
                                 <td className="p-2">${item.healthcareProfessionals}</td>
                                 <td className="p-2">${item.targetAudience}</td>
                                 <td className="p-2">
-                                    <Link to={`/dashboard/updateItem/${item._id}`}>
+                                    <Link to={`/dashboard/update-camp/${item._id}`}>
                                         <button className="btn btn-ghost btn-lg bg-orange-500">
                                             <FaEdit className="text-white" />
                                         </button>
