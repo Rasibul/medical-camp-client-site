@@ -16,6 +16,8 @@ import AddCamp from "../Pages/DashBord/AddCamp/AddCamp";
 import ManageCamp from "../Pages/DashBord/ManageCamp/ManageCamp";
 import ManageRegisterCamp from "../Pages/DashBord/ManageRegisterCamps/ManageRegisterCamp";
 import UpDateCamp from "../Pages/DashBord/UpdateCamp/UpDateCamp";
+import OrganizerProfile from "../Pages/DashBord/OrganizerProfile/OrganizerProfile";
+import PayMent from "../Pages/DashBord/PayMent/PayMent";
 
 
 const route = createBrowserRouter([
@@ -30,15 +32,15 @@ const route = createBrowserRouter([
             },
             {
                 path: 'availableCamps',
-                element: <PrivateRoute>
-                    <AvailableCamps></AvailableCamps>
-                </PrivateRoute>
+                element: 
+                    <AvailableCamps></AvailableCamps>,
+                
             },
             {
                 path: 'camp-details/:id',
-                element: <PrivateRoute>
-                    <CampDetails></CampDetails>
-                </PrivateRoute>,
+                element:
+                    <CampDetails></CampDetails>,
+                
                 loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
             },
             {
@@ -59,34 +61,41 @@ const route = createBrowserRouter([
     // dashbord
     {
         path: 'dashboard',
-        element: <OrganizerRoute>
-            <Dashbord></Dashbord>
-        </OrganizerRoute>,
+        element:
+            <Dashbord></Dashbord>,
+
         children: [
             {
                 path: 'registered-camp',
                 element: <RegisteredCamp></RegisteredCamp>
             },
+            {
+                path: 'payment',
+                element: <PayMent></PayMent>
+            },
 
             // organiger profile
             {
+                path: 'organizer-profile',
+                element: <OrganizerProfile></OrganizerProfile>
+            },
+            {
                 path: 'add-a-camp',
-                element: <OrganizerRoute>
+                element: 
                     <AddCamp></AddCamp>
-                </OrganizerRoute>
             },
             {
-                path:'manage-camps',
-                element:<ManageCamp></ManageCamp>
+                path: 'manage-camps',
+                element: <ManageCamp></ManageCamp>
             },
             {
-                path:'manage-registered-camps',
-                element:<ManageRegisterCamp></ManageRegisterCamp>
+                path: 'manage-registered-camps',
+                element: <ManageRegisterCamp></ManageRegisterCamp>
             },
             {
-                path:'update-camp/:id',
-                element:<UpDateCamp></UpDateCamp>,
-                loader: ({params}) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
+                path: 'update-camp/:id',
+                element: <UpDateCamp></UpDateCamp>,
+                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
             },
             {
                 path: 'users',

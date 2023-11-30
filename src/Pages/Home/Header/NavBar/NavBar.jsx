@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><Link to=''>Home</Link></li>
         <li><Link to='availableCamps'>Available Camps</Link></li>
         <li><Link to='contactUs'>Contact Us</Link></li>
-        <li><Link to='/dashboard/registered-camp'>DashBord</Link></li>
+        <li><Link to='/dashboard/organizer-profile'>DashBord</Link></li>
     </>
 
     return (

@@ -1,12 +1,13 @@
 
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import useOrganizer from "../../Hook/useOrganizer";
 
 const CampDetails = () => {
-    
+    const [isOrganizer] = useOrganizer()
     const campDetails = useLoaderData()
     const { register, handleSubmit, reset } = useForm()
     const axiosSecure = useAxiosSecure()
@@ -60,7 +61,16 @@ const CampDetails = () => {
                     <p className="text-sm text-gray-600 mb-2">Services: {campDetails.specializedServices}</p>
                     <p className="text-sm text-gray-600 mb-4">Description: {campDetails.description}</p>
                     <div className="text-center">
-                        <button className="bg-blue-500  text-white px-4 py-2 rounded-md hover:bg-blue-700" onClick={() => document.getElementById('my_modal_5').showModal()}>Join Now</button>
+                        {
+                            isOrganizer ? <>
+                                <button className="bg-blue-500 disabled text-white px-4 py-2 rounded-md hover:bg-blue-700">Organizer Action</button>
+                            </>
+                                :
+                                <>
+                                    <button className="bg-blue-500  text-white px-4 py-2 rounded-md hover:bg-blue-700" onClick={() => document.getElementById('my_modal_5').showModal()}>Join Now</button>
+                                </>
+                        }
+
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box text-center grid justify-center items-center">
                                 <div className="modal-action">
