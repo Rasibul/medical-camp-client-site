@@ -6,7 +6,6 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import CampDetails from "../Pages/CampDetails/CampDetails";
 import Dashbord from "../MainLayOut/Dashbord";
 import RegisteredCamp from "../Pages/DashBord/RegisteredCamp/RegisteredCamp";
@@ -18,6 +17,8 @@ import ManageRegisterCamp from "../Pages/DashBord/ManageRegisterCamps/ManageRegi
 import UpDateCamp from "../Pages/DashBord/UpdateCamp/UpDateCamp";
 import OrganizerProfile from "../Pages/DashBord/OrganizerProfile/OrganizerProfile";
 import PayMent from "../Pages/DashBord/PayMent/PayMent";
+import ParticipentPrifile from "../Pages/DashBord/ParticipentProfile/ParticipentPrifile";
+import FeedBack from "../Pages/DashBord/FeedBack/FeedBack";
 
 
 const route = createBrowserRouter([
@@ -66,12 +67,20 @@ const route = createBrowserRouter([
 
         children: [
             {
+                path: 'participant-profile',
+                element: <ParticipentPrifile></ParticipentPrifile>
+            },
+            {
                 path: 'registered-camp',
                 element: <RegisteredCamp></RegisteredCamp>
             },
             {
                 path: 'payment',
                 element: <PayMent></PayMent>
+            },
+            {
+                path: 'feedback-and-ratings',
+                element: <FeedBack></FeedBack>
             },
 
             // organiger profile
