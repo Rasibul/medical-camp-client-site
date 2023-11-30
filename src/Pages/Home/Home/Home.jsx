@@ -3,6 +3,7 @@ import Banner from '../Header/Banner/Banner';
 import PopularCamp from '../PopularCamp/PopularCamp';
 import Testimonial from '../Testimonial/Testimonial';
 import AboutUs from '../../../Component/AboutUs/AboutUs';
+import VolunterPage from '../../../Component/VolunterPage/VolunterPage';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
             <PopularCamp></PopularCamp>
             <AboutUs></AboutUs>
             <Testimonial></Testimonial>
+            <VolunterPage></VolunterPage>
         </div>
     );
 };
