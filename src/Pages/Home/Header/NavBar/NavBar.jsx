@@ -3,7 +3,7 @@ import useAuth from "../../../../Hook/useAuth";
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
-    // console.log(user)
+    
     const navOptions = <>
         <li><Link to=''>Home</Link></li>
         <li><Link to='availableCamps'>Available Camps</Link></li>

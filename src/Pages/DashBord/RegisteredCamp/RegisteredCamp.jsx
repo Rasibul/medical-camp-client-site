@@ -54,6 +54,9 @@ const RegisteredCamp = () => {
             <div className="flex justify-between font-bold text-lg sm:text-xl lg:text-2xl">
                 <h2>Total Camp Register: {register.length}</h2>
                 <h2>Total Fee: ${totalCampFee}</h2>
+                <Link to="/dashboard/payment">
+                    <button className="btn btn-lg bg-red-400">Pay</button>
+                </Link>
             </div>
 
             <div className="overflow-x-auto mt-4 ml-4 font-bold">
@@ -83,9 +86,6 @@ const RegisteredCamp = () => {
                                 <div className="">
                                     <td className="">
                                         UnPaid
-                                        <Link to="/dashboard/payment">
-                                            <button className="btn btn-xs bg-red-400">Pay</button>
-                                        </Link>
                                     </td>
                                 </div>
                                 <td className="p-2">ok</td>
