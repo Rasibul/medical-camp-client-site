@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 const Testimonial = () => {
     const [reviews, setReview] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/review')
+        fetch('https://medical-camp-server-site.vercel.app/api/v1/review')
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])

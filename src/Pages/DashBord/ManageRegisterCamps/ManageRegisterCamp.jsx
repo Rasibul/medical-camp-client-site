@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const ManageRegisterCamp = () => {
@@ -49,6 +50,9 @@ const ManageRegisterCamp = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Medical Camp | Manage All Register</title>
+            </Helmet>
             <SectionTitle
                 subHeading={"manage register camp"}
                 heading={"Mange Register Camps"}

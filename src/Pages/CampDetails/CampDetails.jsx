@@ -149,9 +149,13 @@ const CampDetails = () => {
                                             </label>
                                             <input type="text" placeholder="EmergencyNumbr" {...register('emergency', { required: true })} name="emergency" className="input input-bordered" required />
                                         </div>
-                                        <div className="form-control mt-6">
+                                        <div className="form-control mt-6 mb-4">
                                             <input className="bg-blue-500 hover:bg-blue-700 px-4 py-2" type="submit" value="Submit" />
                                         </div>
+                                        <form method="dialog">
+                                            {/* if there is a button in form, it will close the modal */}
+                                            <button className="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2">Close</button>
+                                        </form>
                                     </form>
                                 </div>
                             </div>

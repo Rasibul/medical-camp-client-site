@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import { useState } from "react";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const OrganizerProfile = () => {
     const { user } = useAuth();
@@ -29,26 +30,29 @@ const OrganizerProfile = () => {
 
         const updateProfile = {
             name: data.displayName,
-            email:data.email
+            email: data.email
         }
 
-        const profile = await axiosSecure.patch(`/api/v1/users/${users._id}`, updateProfile);
-            // console.log(campRes.data)
-            if (profile.data.modifiedCount > 0) {
-                // show success popup
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${data.campName} is updated to the Camp.`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // navigate('/availableCamps')
-            }
+        const profile = await axiosSecure.patch(`/api/v1/users/organizer/${users._id}`, updateProfile);
+        // console.log(campRes.data)
+        if (profile.data.modifiedCount > 0) {
+            // show success popup
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${data.campName} is updated to the Camp.`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+            // navigate('/availableCamps')
+        }
     }
 
     return (
         <div>
+            <Helmet>
+                <title>Medical Camp | Dashbord Profile</title>
+            </Helmet>
             <SectionTitle subHeading={"Organizer Profile"} heading={"Profile"} />
 
             <div className="flex justify-center items-center min-h-screen">

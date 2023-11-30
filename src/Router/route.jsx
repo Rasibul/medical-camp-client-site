@@ -19,6 +19,7 @@ import OrganizerProfile from "../Pages/DashBord/OrganizerProfile/OrganizerProfil
 import PayMent from "../Pages/DashBord/PayMent/PayMent";
 import ParticipentPrifile from "../Pages/DashBord/ParticipentProfile/ParticipentPrifile";
 import FeedBack from "../Pages/DashBord/FeedBack/FeedBack";
+import PrivateRoute from "../Router/PrivateRoute/PrivateRoute";
 
 
 const route = createBrowserRouter([
@@ -33,16 +34,17 @@ const route = createBrowserRouter([
             },
             {
                 path: 'availableCamps',
-                element: 
-                    <AvailableCamps></AvailableCamps>,
-                
+                element: <PrivateRoute>
+                    <AvailableCamps></AvailableCamps>
+                </PrivateRoute>
+
             },
             {
                 path: 'camp-details/:id',
-                element:
-                    <CampDetails></CampDetails>,
-                
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
+                element: <PrivateRoute>
+                    <CampDetails></CampDetails>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`https://medical-camp-server-site.vercel.app/api/v1/all-camp/${params.id}`)
             },
             {
                 path: 'contactUs',
@@ -62,9 +64,9 @@ const route = createBrowserRouter([
     // dashbord
     {
         path: 'dashboard',
-        element:
-            <Dashbord></Dashbord>,
-
+        element: <PrivateRoute>
+            <Dashbord></Dashbord>
+        </PrivateRoute>,
         children: [
             {
                 path: 'participant-profile',
@@ -90,8 +92,8 @@ const route = createBrowserRouter([
             },
             {
                 path: 'add-a-camp',
-                element: 
-                    <AddCamp></AddCamp>
+                element: <AddCamp></AddCamp>
+
             },
             {
                 path: 'manage-camps',
@@ -104,7 +106,7 @@ const route = createBrowserRouter([
             {
                 path: 'update-camp/:id',
                 element: <UpDateCamp></UpDateCamp>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/all-camp/${params.id}`)
+                loader: ({ params }) => fetch(`https://medical-camp-server-site.vercel.app/api/v1/all-camp/${params.id}`)
             },
             {
                 path: 'users',

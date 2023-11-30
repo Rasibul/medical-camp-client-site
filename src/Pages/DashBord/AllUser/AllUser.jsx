@@ -4,6 +4,7 @@ import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import { useEffect, useState } from "react";
 import { FaUsers } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const AllUser = () => {
@@ -24,25 +25,28 @@ const AllUser = () => {
 
     const handelMakeOrganizer = user => {
         axiosSecure.patch(`/api/v1/users/organizer/${user._id}`)
-        .then(res =>{
-            // console.log(res.data)
-            if(res.data.modifiedCount > 0){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${user.name} is an Organizer Now!`,
-                    showConfirmButton: false,
-                    timer: 1000
-                });
-            }
-        })
+            .then(res => {
+                // console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is an Organizer Now!`,
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                }
+            })
     }
     return (
         <div>
-              <SectionTitle
-                    subHeading={"All User"}
-                    heading={"Manga All User"}
-                ></SectionTitle>
+            <Helmet>
+                <title>Medical Camp | Manage All User</title>
+            </Helmet>
+            <SectionTitle
+                subHeading={"All User"}
+                heading={"Manga All User"}
+            ></SectionTitle>
             <div className="flex justify-evenly">
                 <h2>All User</h2>
                 <h2>Total User:{users.length}</h2>

@@ -4,6 +4,7 @@ import usePopularCamp from "../../../Hook/usePopularCamp";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ManageCamp = () => {
     const [popularCamp, , refetch] = usePopularCamp();
@@ -41,6 +42,9 @@ const ManageCamp = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Medical Camp | Manage Camp</title>
+            </Helmet>
             <SectionTitle
                 subHeading="Manage camp"
                 heading="Manage All Camp"
@@ -81,7 +85,7 @@ const ManageCamp = () => {
                                 </td>
                                 <td className="p-2">
                                     <button
-                                       onClick={() => handleDeleteItem(item)}
+                                        onClick={() => handleDeleteItem(item)}
                                         className="btn btn-ghost btn-lg"
                                     >
                                         <FaTrashAlt className="text-red-600" />
