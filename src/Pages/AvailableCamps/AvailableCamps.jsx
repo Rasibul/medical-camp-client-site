@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const AvailableCamps = () => {
     const [popularCamp] = usePopularCamp()
     return (
-        <section>
+        <section className="mb-8">
              <Helmet>
                 <title>Medical Camp | Available Camp</title>
             </Helmet>

@@ -9,7 +9,6 @@ const Navbar = () => {
         <li><Link to=''>Home</Link></li>
         <li><Link to='availableCamps'>Available Camps</Link></li>
         <li><Link to='contactUs'>Contact Us</Link></li>
-        <li><Link to='/dashboard/organizer-profile'>DashBord</Link></li>
 
         {
             user && isOrganizer && <li><Link to="/dashboard/organizer-profile">Dashboard</Link></li>
