@@ -1,8 +1,14 @@
-# React + Vite
+### Project Name: Medical Camp Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ **Feture My Project :**
+  - This is a medical camp project.Where there are all types of medical camp.
+  - This medical camp are created by medical organizer.
+  - Medical organizers can add new camps,delete camps,and update camps if they want.
+  - Every participent and can view these camps and join the camps as per their requirments.
+  - Each participent must create a new user before joining the camp.
+  - Every participent join the camp after register the camp
 
-Currently, two official plugins are available:
+    ## Project Live link: https://medical-management-4c00c.web.app/
+ 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
