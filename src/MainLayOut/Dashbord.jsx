@@ -1,4 +1,4 @@
-import { FaCartPlus, FaCashRegister, FaGrinStars, FaHistory, FaHome, FaList, FaUsers } from "react-icons/fa";
+import { FaCartPlus, FaCashRegister,  FaHome, FaList, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { IoMdAdd } from "react-icons/io";
@@ -60,18 +60,18 @@ const Dashbord = () => {
                                         Register Camp
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to='/dashboard/payment-history'>
                                         <FaHistory />
                                         Payment History
                                     </NavLink>
-                                </li>
-                                <li>
+                                </li> */}
+                                {/* <li>
                                     <NavLink to='/dashboard/feedback-and-ratings'>
                                         <FaGrinStars />
                                         Feed Back
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </>
                     }
                     <div className="divider bg-white"></div>
